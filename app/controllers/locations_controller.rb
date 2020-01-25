@@ -18,7 +18,8 @@ class LocationsController < ApplicationController
     response = RestClient.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/#{@location.key}", { params: { apikey: Rails.application.credentials.dig(:api_key) }})
     weather_data = JSON.parse(response)
     forecasts.push(weather_data['DailyForecasts'])
-    render json: forecasts[0][1..3]
+    three_day_forecast = forecasts[0][0..2]
+    render json: three_day_forecast
   end
 
 end
