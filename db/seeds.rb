@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'rest-client'
+
+response = RestClient.get('http://dataservice.accuweather.com/locations/v1/topcities/50', { params: { apikey: Rails.application.credentials.dig(:api_key) }})
+location_hashes = JSON.parse(response)
+location_hashes.each do |location_hash|
+  Location.create(name: location_hash['LocalizedName'], key: location_hash['Key'])
+end
