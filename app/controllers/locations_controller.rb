@@ -18,7 +18,6 @@ class LocationsController < ApplicationController
     forecasts.push(find_forecasts(@location))
     three_day_forecast = forecasts[0][0..2]
     render json: three_day_forecast
-    expires_in 1.hour, public: true
   end
 
   private
