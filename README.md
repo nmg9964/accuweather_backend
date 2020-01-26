@@ -1,5 +1,5 @@
 # AccuWeather Project (Back-End Setup)
-Users may select one of the top 50 major cities around the world to view its three-day weather forecast starting from the current day. It is powered by a Ruby on Rails API and SQLite on the back-end along with React JS on the front-end, which is integrated with the Semantic UI CSS framework.
+Users may select one of the top 50 major cities around the world to view its three-day weather forecast starting from the current day. This project is powered by a Ruby on Rails API and SQLite on the server-side along with React JS on the client-side, which is integrated with the Semantic UI CSS framework.
 
 ## Setup
 After installing the latest versions of Ruby, Rails, SQLite, and cloning this repository, please run the following commands in your terminal:
