@@ -23,7 +23,7 @@ class LocationsController < ApplicationController
   private
 
   def find_forecasts(location)
-    response = RestClient.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/#{location.key}", {params: { apikey: Rails.application.credentials.dig(:api_key) }})
+    response = RestClient.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/#{location.key}", {params: { apikey: 'YjQVRmzwBmzhmzi6qi3xOQ20em8to7LJ' }})
     weather_data = JSON.parse(response)
     weather_data['DailyForecasts']
   end
